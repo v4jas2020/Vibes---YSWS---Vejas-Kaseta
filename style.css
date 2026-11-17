@@ -71,29 +71,16 @@ p { color: var(--muted); max-width: 650px; margin-bottom: 20px; }
 .section-heading { margin-bottom: 38px; }
 .section-heading > p { font-size: 13px; }
 /* Entries always stack vertically, including on wide screens. */
-.interest-grid, .project-grid { display: flex; flex-direction: column; }
+.interest-grid { display: flex; flex-direction: column; }
 .interest-card { padding: 25px 0; border-top: 1px solid var(--line); transition: padding-left .2s; }
 .interest-card:hover { padding-left: 8px; }
 .card-number { color: var(--accent); font-size: 10px; letter-spacing: 1px; }
 .interest-card h3 { margin-top: 7px; }
 .interest-card p { font-size: 14px; margin-bottom: 0; }
-.project-card { padding: 30px 0; border-top: 1px solid var(--line); }
-.project-card:last-child { padding-bottom: 0; }
-.project-body .eyebrow { font-size: 9px; margin-bottom: 12px; }
-.project-body h3 { display: flex; justify-content: space-between; align-items: center; }
-.project-body h3 a { color: var(--accent); padding: 2px 8px; font-size: 26px; transition: transform .2s; }
-.project-body h3 a:hover { transform: translate(2px, -2px); }
-.project-body > p:not(.eyebrow) { font-size: 14px; }
-.contact > p:not(.eyebrow) { font-size: 14px; }
-.email-link { display: inline-flex; gap: 35px; border-bottom: 1px solid var(--accent); padding-bottom: 6px; font-size: clamp(20px, 5vw, 28px); margin: 15px 0 28px; }
-.email-link span { color: var(--accent); }
-.social-links { display: flex; flex-wrap: wrap; gap: 26px; font-size: 11px; color: var(--muted); }
 footer.section-shell { padding-block: 30px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 15px; }
 footer .wordmark { font-size: 14px; }
 footer > span { font-size: 9px; color: var(--muted); }
 footer > a:last-child { font-size: 8px; letter-spacing: 1px; color: var(--muted); }
-.toast { position: fixed; bottom: 25px; left: 50%; transform: translate(-50%, 15px); background: var(--surface); border: 1px solid var(--line); color: var(--text); padding: 12px 20px; border-radius: 5px; font-size: 12px; width: max-content; max-width: calc(100% - 40px); opacity: 0; pointer-events: none; transition: opacity .25s, transform .25s; z-index: 20; }
-.toast.visible { opacity: 1; transform: translate(-50%, 0); }
 .skip-link { position: fixed; top: -70px; left: 20px; padding: 8px 18px; background: var(--accent); color: var(--bg); z-index: 100; }
 .skip-link:focus { top: 10px; }
 .js-ready .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s, transform .6s; }
