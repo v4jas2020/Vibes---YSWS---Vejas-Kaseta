@@ -45,16 +45,4 @@ if ('IntersectionObserver' in window) {
   document.body.classList.add('js-ready');
 }
 
-// Replace href="#" with your actual URL and remove data-placeholder to go live.
-const toast = document.querySelector('.toast');
-let toastTimeout;
-document.querySelectorAll('[data-placeholder]').forEach(link => {
-  link.addEventListener('click', event => {
-    event.preventDefault();
-    toast.textContent = link.dataset.placeholder;
-    toast.classList.add('visible');
-    clearTimeout(toastTimeout);
-    toastTimeout = setTimeout(() => toast.classList.remove('visible'), 4200);
-  });
-});
 document.querySelector('#year').textContent = new Date().getFullYear();
