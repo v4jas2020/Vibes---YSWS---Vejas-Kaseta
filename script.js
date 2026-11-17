@@ -45,41 +45,6 @@ if ('IntersectionObserver' in window) {
   document.body.classList.add('js-ready');
 }
 
-// Gallery reads directly from the HTML: duplicate a gallery button to add photos.
-const galleryItems = [...document.querySelectorAll('.gallery-item')];
-const lightbox = document.querySelector('.lightbox');
-const lightboxImage = lightbox.querySelector('img');
-const caption = lightbox.querySelector('figcaption');
-let currentImage = 0;
-let galleryTrigger;
-function showImage(index) {
-  currentImage = (index + galleryItems.length) % galleryItems.length;
-  const image = galleryItems[currentImage].querySelector('img');
-  lightboxImage.src = image.src;
-  lightboxImage.alt = image.alt;
-  caption.textContent = `${String(currentImage + 1).padStart(2, '0')} / ${String(galleryItems.length).padStart(2, '0')} · ${image.alt}`;
-}
-galleryItems.forEach((item, index) => item.addEventListener('click', () => {
-  galleryTrigger = item;
-  showImage(index);
-  lightbox.showModal();
-  document.body.classList.add('modal-open');
-}));
-lightbox.querySelector('.lightbox-close').addEventListener('click', () => lightbox.close());
-lightbox.querySelector('.lightbox-prev').addEventListener('click', () => showImage(currentImage - 1));
-lightbox.querySelector('.lightbox-next').addEventListener('click', () => showImage(currentImage + 1));
-lightbox.addEventListener('keydown', event => {
-  if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
-    event.preventDefault();
-    showImage(currentImage + (event.key === 'ArrowRight' ? 1 : -1));
-  }
-});
-lightbox.addEventListener('click', event => { if (event.target === lightbox) lightbox.close(); });
-lightbox.addEventListener('close', () => {
-  document.body.classList.remove('modal-open');
-  galleryTrigger?.focus();
-});
-
 // Replace href="#" with your actual URL and remove data-placeholder to go live.
 const toast = document.querySelector('.toast');
 let toastTimeout;
